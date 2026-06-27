@@ -20,7 +20,7 @@ export const authenticate = (
   try {
     const decoded = verifyToken(token);
 
-    req.user = decoded; 
+    (req as any).user = decoded;
 
     next();
   } catch (error) {
